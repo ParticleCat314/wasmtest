@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WASM Demo</title>
+</head>
+<body>
+    <h1>WebAssembly Example</h1>
+    <p>Check the console for output.</p>
+
+    <script type="module">
+        import initModule from './add.js';
+
+        initModule().then((Module) => {
+            console.log("WASM Loaded!");
+            let result = Module._add(5, 7);
+            console.log("5 + 7 =", result);
+        });
+    </script>
+</body>
+</html>
